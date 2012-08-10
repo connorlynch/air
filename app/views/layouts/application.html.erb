@@ -28,6 +28,8 @@
 			  <% if session[:user_id] %>
 			    <% u = User.find_by_id(session[:user_id]) %>
 			    Hello, <%= u.name %>
+				<% else %>
+				Sign Up or Sign in
 			 <% end %>
 			</p>
 		</header>

@@ -24,7 +24,9 @@
       <tr>
         <td>
           <% if flight.bookable? %>
-            <%= link_to "Book Now", new_reservation_path(:flight_id => flight.id) %>
+            <button>
+				<%= link_to "Book Now", new_reservation_path(:flight_id => flight.id), :style => "color:magenta" %>
+			</button>
           <% end %>
         </td>
         <td><%= flight.number %></td>

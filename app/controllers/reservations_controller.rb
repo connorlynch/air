@@ -46,6 +46,9 @@ class ReservationsController < ApplicationController
     
     respond_to do |format|
       if @reservation.save
+        f = Flight.find_by_id(params[:reservation][:flight_id])
+        f.seats_remaining = f.seats_remaining - 1
+        f.save
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
         format.json { render json: @reservation, status: :created, location: @reservation }
       else

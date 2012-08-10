@@ -6,6 +6,7 @@ class Reservation < ActiveRecord::Base
   
   validates :card_number, :presence => true
   validates :departs_on, :presence => true
+  validates :user_id, :presence => true
   validates :card_number, :format => { :with => /^4\d{15}/ }
   
 end

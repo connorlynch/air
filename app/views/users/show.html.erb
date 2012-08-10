@@ -11,6 +11,15 @@
 </p>
 
 <p>
+  <b>Reservations:</b>
+	<ul>
+  	<% @user.reservations.each do |res| %>
+  		<li>Flight <%=link_to res.flight.number, reservation_url(res.id) %> to <%= res.flight.arrival_airport_code %> departing at <%= res.flight.departs_at.strftime("%l:%M %P")%> on <%= res.departs_on %></li> 
+	<% end %>
+	</ul>
+</p>
+
+<p>
   <b>Frequent Flyer Miles: 0</b>
   <em>Maybe you should go somewhere!</em>
 </p>
